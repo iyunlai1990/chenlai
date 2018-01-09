@@ -30,7 +30,7 @@
             <div class="common-title">
                 类型：<a href="${pageContext.request.contextPath}/front/jumpArticleCategory?id=${item.id}" target="_blank" >${item.name}</a>
             </div>
-            <div class="post-lists">
+            <%--<div class="post-lists">
                 <div class="post-lists-body">
                     <c:forEach items="${fnc:getArticleList(item.site.id, item.id, 4, '')}" var="article">
                         <div class="post-list-item">
@@ -49,7 +49,7 @@
                         </div>
                     </c:forEach>
                 </div>
-            </div>
+            </div>--%>
         </div>
     </c:forEach>
 </div>

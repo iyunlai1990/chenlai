@@ -374,9 +374,10 @@ public class FrontWebController extends BaseController{
     @RequestMapping(value = {"jumpArticleCategoryList"})
     public String jumpArticleCategoryList(HttpServletRequest request, HttpServletResponse response, Model model) {
         Category category =  new Category() ;
-        category.setSite(new Site()); //默认站点``
+        category.setSite(new Site("1")); //默认站点``
 		category.setParent(new Category("l"));//父节点为顶级栏目
-        Page<Category> categoryPage = categoryService.find(new Page<Category>(request,response),category);
+        //Page<Category> categoryPage = categoryService.find(new Page<Category>(request,response),category);
+		Page<Category> categoryPage = categoryService.findPage(new Page<Category>(request,response),category);
         model.addAttribute("categoryList",categoryPage.getList());
         return "frontweb/articleCategoryList";
     }
