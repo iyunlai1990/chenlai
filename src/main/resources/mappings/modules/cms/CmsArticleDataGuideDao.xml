@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.thinkgem.jeesite.modules.cms.dao.CmsArticleDataGuideDao">
+    
+	<sql id="cmsArticleDataGuideColumns">
+		a.id AS "id",
+		a.parent_id AS "parent.id",
+		a.parent_ids AS "parentIds",
+		a.article_data_id AS "articleDataId",
+		a.articledivtitle AS "articledivtitle",
+		a.create_by AS "createBy.id",
+		a.create_date AS "createDate",
+		a.update_by AS "updateBy.id",
+		a.update_date AS "updateDate",
+		a.remarks AS "remarks",
+		a.del_flag AS "delFlag",
+		a.articledivhref AS "articledivhref"
+	</sql>
+	
+	<sql id="cmsArticleDataGuideJoins">
+	</sql>
+    
+	<select id="get" resultType="CmsArticleDataGuide">
+		SELECT 
+			<include refid="cmsArticleDataGuideColumns"/>
+		FROM cms_article_data_guide a
+		<include refid="cmsArticleDataGuideJoins"/>
+		WHERE a.id = #{id}
+	</select>
+	
+	<select id="findList" resultType="CmsArticleDataGuide">
+		SELECT 
+			<include refid="cmsArticleDataGuideColumns"/>
+		FROM cms_article_data_guide a
+		<include refid="cmsArticleDataGuideJoins"/>
+		<where>
+			a.del_flag = #{DEL_FLAG_NORMAL}
+			<if test="id != null and id != ''">
+				AND a.id = #{id}
+			</if>
+			<if test="parent != null and parent.id != null and parent.id != ''">
+				AND a.parent_id = #{parent.id}
+			</if>
+			<if test="parentIds != null and parentIds != ''">
+				AND a.parent_ids LIKE 
+					<if test="dbName == 'oracle'">'%'||#{parentIds}||'%'</if>
+					<if test="dbName == 'mssql'">'%'+#{parentIds}+'%'</if>
+					<if test="dbName == 'mysql'">concat('%',#{parentIds},'%')</if>
+			</if>
+			<if test="articleDataId != null and articleDataId != ''">
+				AND a.article_data_id = #{articleDataId}
+			</if>
+			<if test="articledivtitle != null and articledivtitle != ''">
+				AND a.articledivtitle = #{articledivtitle}
+			</if>
+			<if test="createBy != null and createBy.id != null and createBy.id != ''">
+				AND a.create_by = #{createBy.id}
+			</if>
+			<if test="createDate != null and createDate != ''">
+				AND a.create_date = #{createDate}
+			</if>
+			<if test="updateBy != null and updateBy.id != null and updateBy.id != ''">
+				AND a.update_by = #{updateBy.id}
+			</if>
+			<if test="updateDate != null and updateDate != ''">
+				AND a.update_date = #{updateDate}
+			</if>
+			<if test="remarks != null and remarks != ''">
+				AND a.remarks = #{remarks}
+			</if>
+			<if test="delFlag != null and delFlag != ''">
+				AND a.del_flag = #{delFlag}
+			</if>
+			<if test="articledivhref != null and articledivhref != ''">
+				AND a.articledivhref = #{articledivhref}
+			</if>
+		</where>
+		<choose>
+			<when test="page !=null and page.orderBy != null and page.orderBy != ''">
+				ORDER BY ${page.orderBy}
+			</when>
+			<otherwise>
+				ORDER BY a.update_date ASC
+			</otherwise>
+		</choose>
+	</select>
+	
+	<select id="findAllList" resultType="CmsArticleDataGuide">
+		SELECT 
+			<include refid="cmsArticleDataGuideColumns"/>
+		FROM cms_article_data_guide a
+		<include refid="cmsArticleDataGuideJoins"/>
+		<where>
+			a.del_flag = #{DEL_FLAG_NORMAL}
+		</where>		
+		<choose>
+			<when test="page !=null and page.orderBy != null and page.orderBy != ''">
+				ORDER BY ${page.orderBy}
+			</when>
+			<otherwise>
+				ORDER BY a.update_date DESC
+			</otherwise>
+		</choose>
+	</select>
+	
+	<insert id="insert">
+		INSERT INTO cms_article_data_guide(
+			id,
+			parent_id,
+			parent_ids,
+			article_data_id,
+			articledivtitle,
+			create_by,
+			create_date,
+			update_by,
+			update_date,
+			remarks,
+			del_flag,
+			articledivhref
+		) VALUES (
+			#{id},
+			#{parent.id},
+			#{parentIds},
+			#{articleDataId},
+			#{articledivtitle},
+			#{createBy.id},
+			#{createDate},
+			#{updateBy.id},
+			#{updateDate},
+			#{remarks},
+			#{delFlag},
+			#{articledivhref}
+		)
+	</insert>
+	
+	<update id="update">
+		UPDATE cms_article_data_guide SET 	
+			parent_id = #{parent.id},
+			parent_ids = #{parentIds},
+			article_data_id = #{articleDataId},
+			articledivtitle = #{articledivtitle},
+			update_by = #{updateBy.id},
+			update_date = #{updateDate},
+			remarks = #{remarks},
+			articledivhref = #{articledivhref}
+		WHERE id = #{id}
+	</update>
+	
+	<update id="delete">
+		UPDATE cms_article_data_guide SET 
+			del_flag = #{DEL_FLAG_DELETE}
+		WHERE id = #{id}
+	</update>
+	
+</mapper>
