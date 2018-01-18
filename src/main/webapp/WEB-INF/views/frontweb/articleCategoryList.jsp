@@ -25,14 +25,14 @@
 </header>
 
 <div class="main-content common-page clearfix">
-    <c:forEach items="${categoryList}" var="item">
+    <c:forEach items="${fnc:getMainNavList(1)}" var="item">
         <div class="categorys-item">
             <div class="common-title">
-                类型：<a href="${pageContext.request.contextPath}/front/jumpArticleCategory?id=${item.id}" target="_blank" >${item.name}</a>
+                <a href="${pageContext.request.contextPath}/front/jumpArticleCategory?id=${item.id}" target="_blank" >${item.name}  >></a>
             </div>
-            <%--<div class="post-lists">
+            <div class="post-lists">
                 <div class="post-lists-body">
-                    <c:forEach items="${fnc:getArticleList(item.site.id, item.id, 4, '')}" var="article">
+                    <c:forEach items="${fnc:getArticleList(item.site.id, item.id, 3, '')}" var="article">
                         <div class="post-list-item">
                             <div class="post-list-item-container">
                                 <div class="item-label">
@@ -43,13 +43,17 @@
                                     </div>
                                     <div class="item-meta clearfix">
                                         <div class="item-meta-date">发布于 <fmt:formatDate value="${article.createDate}" pattern="yyyy-MM-dd"/></div>
+                                        <div class="item-meta-txt hvr-bob">
+                                            <a href="/front/jumpArticleCategory?id=${article.category.id}" target="_blank">
+                                                    ${article.category.name}</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </c:forEach>
                 </div>
-            </div>--%>
+            </div>
         </div>
     </c:forEach>
 </div>
