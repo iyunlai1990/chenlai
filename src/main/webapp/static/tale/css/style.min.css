@@ -867,6 +867,22 @@ input:-ms-input-placeholder,textarea:-ms-input-placeholder {
     border-radius: 50%
 }
 
+.post-list-item-container .item-label .item-meta .item-meta-txt {
+    display: inline-block;
+    font-size: 15px;
+    position: relative;
+    float: left;
+    padding-top: 9px;
+    padding-left: 9px;
+    text-align: right;
+    text-transform: none;
+    float: right
+}
+
+.post-list-item-container .item-label .item-meta .item-meta-txt a {
+    color: #eb5055;
+}
+
 .onelist-page {
     max-width: 100%;
     margin: 0;
