@@ -28,7 +28,7 @@
         <ul class="navbar-ul">
             <li><a href="/front/jumpArticleCategoryList">归档</a></li>
             <li><a href="/front/jumpArticleFrientLink">友链</a></li>
-            <li><a href="/front/jumpArticleAbout">关于</a></li>
+            <li><a href="/front/jumpArticleAbout" >关于</a></li>
         </ul>
     </div>
 </div>
@@ -73,15 +73,20 @@
         $('.navbar-menu a').mouseover(function(){
             $(this).addClass("hvr-bob");
         });
-        $('.navbar-menu a').mouseout(function(){
-            $(this).removeClass("hvr-bob");
-
-        });
         $('.navbar-logo').mouseover(function(){
             $(this).addClass("hvr-bob");
         });
 
-
+        //对导航栏当前状态进行判断
+        var now_href = window.location.href ;
+        $(".navbar-menu a").each(function(){
+            if(now_href.indexOf($(this).attr("href"))>-1){
+                $(this).addClass("current");
+            }
+            else{
+                //alert(now_href.indexOf($(this).attr("href"))+"---"+$(this).attr("href"));
+            }
+        });
     });
     function more() {
         layer.open({
