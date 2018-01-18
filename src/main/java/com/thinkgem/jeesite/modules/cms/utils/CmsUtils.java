@@ -86,7 +86,7 @@ public class CmsUtils {
 			category.setSite(new Site(siteId));
 			category.setParent(new Category("1"));
 			category.setInMenu(Global.SHOW);
-			Page<Category> page = new Page<Category>(1, -1);
+			Page<Category> page = new Page<Category>(1, 30);
 			page = categoryService.find(page, category);
 			mainNavList = page.getList();
 			CacheUtils.put(CMS_CACHE, "mainNavList_"+siteId, mainNavList);
