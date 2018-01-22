@@ -5,6 +5,7 @@ package com.thinkgem.jeesite.modules.act.utils;
 
 import java.util.Map;
 
+import com.thinkgem.jeesite.common.utils.StringUtils;
 import org.apache.commons.beanutils.ConvertUtils;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;

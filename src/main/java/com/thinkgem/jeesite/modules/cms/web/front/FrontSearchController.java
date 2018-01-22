@@ -7,6 +7,15 @@ package com.thinkgem.jeesite.modules.cms.web.front;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.thinkgem.jeesite.common.utils.StringUtils;
+import com.thinkgem.jeesite.common.web.BaseController;
+import com.thinkgem.jeesite.modules.cms.entity.Article;
+import com.thinkgem.jeesite.modules.cms.entity.Guestbook;
+import com.thinkgem.jeesite.modules.cms.entity.Site;
+import com.thinkgem.jeesite.modules.cms.service.ArticleService;
+import com.thinkgem.jeesite.modules.cms.service.GuestbookService;
+import com.thinkgem.jeesite.modules.cms.utils.CmsUtils;
+import com.thinkgem.jeesite.modules.sys.utils.UserUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -31,7 +40,7 @@ import com.thinkgem.jeesite.modules.sys.utils.UserUtils;
  */
 @Controller
 @RequestMapping(value = "${frontPath}/search")
-public class FrontSearchController extends BaseController{
+public class FrontSearchController extends BaseController {
 	
 	@Autowired
 	private ArticleService articleService;

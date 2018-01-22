@@ -4,6 +4,12 @@
 package com.thinkgem.jeesite.modules.cms.web;
 
 import com.google.common.collect.Lists;
+import com.thinkgem.jeesite.common.utils.StringUtils;
+import com.thinkgem.jeesite.common.web.BaseController;
+import com.thinkgem.jeesite.modules.cms.entity.*;
+import com.thinkgem.jeesite.modules.cms.service.*;
+import com.thinkgem.jeesite.modules.cms.utils.CmsUtils;
+import com.thinkgem.jeesite.modules.sys.utils.DictUtils;
 import com.thinkgem.jeesite.common.config.Global;
 import com.thinkgem.jeesite.common.persistence.Page;
 import com.thinkgem.jeesite.common.servlet.ValidateCodeServlet;
@@ -32,7 +38,7 @@ import java.util.Map;
  */
 @Controller
 @RequestMapping(value = "${taleFront}")
-public class FrontWebController extends BaseController{
+public class FrontWebController extends BaseController {
 	
 	@Autowired
 	private ArticleService articleService;
@@ -51,7 +57,7 @@ public class FrontWebController extends BaseController{
 	 * 网站首页
 	 */
 	@RequestMapping
-	public String index(Article article, HttpServletRequest request, HttpServletResponse response,Model model) {
+	public String index(Article article, HttpServletRequest request, HttpServletResponse response, Model model) {
 		/*Site site = CmsUtils.getSite(Site.defaultSiteId());
 		model.addAttribute("site", site);
 		model.addAttribute("isIndex", true);*/

@@ -5,6 +5,8 @@ package com.thinkgem.jeesite.modules.gen.dao;
 
 import java.util.List;
 
+import com.thinkgem.jeesite.modules.gen.entity.GenTable;
+import com.thinkgem.jeesite.modules.gen.entity.GenTableColumn;
 import com.thinkgem.jeesite.common.persistence.CrudDao;
 import com.thinkgem.jeesite.common.persistence.annotation.MyBatisDao;
 import com.thinkgem.jeesite.modules.gen.entity.GenTable;

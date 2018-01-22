@@ -5,6 +5,8 @@ package com.thinkgem.jeesite.modules.cms.web.front;
 
 import javax.servlet.http.HttpServletRequest;
 
+import com.thinkgem.jeesite.common.web.BaseController;
+import com.thinkgem.jeesite.modules.cms.utils.WiexinSignUtil;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -41,7 +43,7 @@ public class WeixinController extends BaseController {
 		System.out.println("=============================================== get end");
 		
         // 通过检验signature对请求进行校验，若校验成功则原样返回echostr，表示接入成功，否则接入失败  
-        if (WiexinSignUtil.checkSignature(signature, timestamp, nonce)) {  
+        if (WiexinSignUtil.checkSignature(signature, timestamp, nonce)) {
         	return echostr;
         }
 

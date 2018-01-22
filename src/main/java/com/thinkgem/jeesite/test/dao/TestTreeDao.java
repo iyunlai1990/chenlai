@@ -3,6 +3,7 @@
  */
 package com.thinkgem.jeesite.test.dao;
 
+import com.thinkgem.jeesite.test.entity.TestTree;
 import com.thinkgem.jeesite.common.persistence.TreeDao;
 import com.thinkgem.jeesite.common.persistence.annotation.MyBatisDao;
 import com.thinkgem.jeesite.test.entity.TestTree;

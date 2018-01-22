@@ -36,21 +36,21 @@ public class WorkDayUtils {
 	 * @param d2
 	 * @return
 	 */
-	public int getDaysBetween(java.util.Calendar d1, java.util.Calendar d2) {
+	public int getDaysBetween(Calendar d1, Calendar d2) {
 		if (d1.after(d2)) { // swap dates so that d1 is start and d2 is end
-			java.util.Calendar swap = d1;
+			Calendar swap = d1;
 			d1 = d2;
 			d2 = swap;
 		}
-		int days = d2.get(java.util.Calendar.DAY_OF_YEAR)
-				- d1.get(java.util.Calendar.DAY_OF_YEAR);
-		int y2 = d2.get(java.util.Calendar.YEAR);
-		if (d1.get(java.util.Calendar.YEAR) != y2) {
-			d1 = (java.util.Calendar) d1.clone();
+		int days = d2.get(Calendar.DAY_OF_YEAR)
+				- d1.get(Calendar.DAY_OF_YEAR);
+		int y2 = d2.get(Calendar.YEAR);
+		if (d1.get(Calendar.YEAR) != y2) {
+			d1 = (Calendar) d1.clone();
 			do {
-				days += d1.getActualMaximum(java.util.Calendar.DAY_OF_YEAR);
-				d1.add(java.util.Calendar.YEAR, 1);
-			} while (d1.get(java.util.Calendar.YEAR) != y2);
+				days += d1.getActualMaximum(Calendar.DAY_OF_YEAR);
+				d1.add(Calendar.YEAR, 1);
+			} while (d1.get(Calendar.YEAR) != y2);
 		}
 		return days;
 	}
@@ -61,10 +61,10 @@ public class WorkDayUtils {
 	 * @param d2
 	 * @return
 	 */
-	public int getWorkingDay(java.util.Calendar d1, java.util.Calendar d2) {
+	public int getWorkingDay(Calendar d1, Calendar d2) {
 		int result = -1;
 		if (d1.after(d2)) { // swap dates so that d1 is start and d2 is end
-			java.util.Calendar swap = d1;
+			Calendar swap = d1;
 			d1 = d2;
 			d2 = swap;
 		}

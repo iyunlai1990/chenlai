@@ -10,6 +10,13 @@ import java.util.Map;
 
 import com.google.common.collect.Lists;
 import com.thinkgem.jeesite.common.config.Global;
+import com.thinkgem.jeesite.common.mapper.JsonMapper;
+import com.thinkgem.jeesite.common.utils.CacheUtils;
+import com.thinkgem.jeesite.common.utils.SpringContextHolder;
+import com.thinkgem.jeesite.common.utils.StringUtils;
+import com.thinkgem.jeesite.modules.cms.entity.*;
+import com.thinkgem.jeesite.modules.cms.service.*;
+import com.thinkgem.jeesite.common.config.Global;
 import com.thinkgem.jeesite.common.utils.StringUtils;
 
 import com.thinkgem.jeesite.common.mapper.JsonMapper;
@@ -47,7 +54,7 @@ public class CmsUtils {
 	 */
 	public static List<Site> getSiteList(){
 		@SuppressWarnings("unchecked")
-		List<Site> siteList = (List<Site>)CacheUtils.get(CMS_CACHE, "siteList");
+		List<Site> siteList = (List<Site>) CacheUtils.get(CMS_CACHE, "siteList");
 		if (siteList == null){
 			Page<Site> page = new Page<Site>(1, -1);
 			page = siteService.findPage(page, new Site());
@@ -143,7 +150,7 @@ public class CmsUtils {
 	/**
 	 * 得到最新评论列表
 	 */
-	public static List<Comment> getCommentList(int pageNo ,int pageSize) {
+	public static List<Comment> getCommentList(int pageNo , int pageSize) {
 		Comment comment = new Comment();
 		Page<Comment> commentPage = commentService.findPage(new Page<Comment>(pageNo,pageSize),comment);
 		return commentPage.getList();

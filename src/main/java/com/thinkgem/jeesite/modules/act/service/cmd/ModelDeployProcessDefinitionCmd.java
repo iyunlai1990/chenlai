@@ -26,7 +26,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
  * @author ThinkGem
  * @version 2016年8月2日
  */
-public class ModelDeployProcessDefinitionCmd implements Command<java.lang.Void> {
+public class ModelDeployProcessDefinitionCmd implements Command<Void> {
 	
 	private String modelId;
 	private String procDefKey;

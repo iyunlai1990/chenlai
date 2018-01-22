@@ -5,8 +5,8 @@
       content='width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no'>
 <meta http-equiv='Cache-Control' content='no-transform'/>
 <meta http-equiv='Cache-Control' content='no-siteapp'/>
-<meta name='keywords' content='博客系统,Jessite,Chenlai'/>
-<meta name='description' content='博客系统,Jessite,Chenlai'/>
+<meta name='keywords' content='博客系统,Chenlai'/>
+<meta name='description' content='博客系统,Chenlai'/>
 <link rel='shortcut icon' href='${ctxStatic}/tale/image/rose.png'/>
 <link rel='apple-touch-icon'
       href='${ctxStatic}/tale/image/rose.png'/>

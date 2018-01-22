@@ -2,6 +2,7 @@ package com.thinkgem.jeesite.modules.oa.service;
 
 import java.util.Date;
 
+import com.thinkgem.jeesite.modules.oa.entity.Leave;
 import org.activiti.engine.RuntimeService;
 import org.activiti.engine.delegate.DelegateTask;
 import org.activiti.engine.delegate.TaskListener;

@@ -6,6 +6,11 @@ package com.thinkgem.jeesite.modules.cms.web;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.thinkgem.jeesite.common.config.Global;
+import com.thinkgem.jeesite.common.utils.StringUtils;
+import com.thinkgem.jeesite.common.web.BaseController;
+import com.thinkgem.jeesite.modules.cms.entity.CmsArticleDataGuide;
+import com.thinkgem.jeesite.modules.cms.service.CmsArticleDataGuideService;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -69,7 +74,7 @@ public class CmsArticleDataGuideController extends BaseController {
 		}
 		cmsArticleDataGuideService.save(cmsArticleDataGuide);
 		addMessage(redirectAttributes, "保存文章内容引用模块成功");
-		return "redirect:"+Global.getAdminPath()+"/cms/cmsArticleDataGuide/?repage";
+		return "redirect:"+ Global.getAdminPath()+"/cms/cmsArticleDataGuide/?repage";
 	}
 	
 	@RequiresPermissions("cms:cmsArticleDataGuide:edit")

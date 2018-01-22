@@ -5,6 +5,10 @@ package com.thinkgem.jeesite.common.service;
 
 import java.util.List;
 
+import com.thinkgem.jeesite.common.persistence.TreeDao;
+import com.thinkgem.jeesite.common.persistence.TreeEntity;
+import com.thinkgem.jeesite.common.utils.Reflections;
+import com.thinkgem.jeesite.common.utils.StringUtils;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.thinkgem.jeesite.common.persistence.TreeDao;
@@ -27,7 +31,7 @@ public abstract class TreeService<D extends TreeDao<T>, T extends TreeEntity<T>>
 		Class<T> entityClass = Reflections.getClassGenricType(getClass(), 1);
 		
 		// 如果没有设置父节点，则代表为跟节点，有则获取父节点实体
-		if (entity.getParent() == null || StringUtils.isBlank(entity.getParentId()) 
+		if (entity.getParent() == null || StringUtils.isBlank(entity.getParentId())
 				|| "0".equals(entity.getParentId())){
 			entity.setParent(null);
 		}else{

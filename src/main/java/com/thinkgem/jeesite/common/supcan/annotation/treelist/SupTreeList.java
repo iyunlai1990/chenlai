@@ -9,6 +9,7 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+import com.thinkgem.jeesite.common.supcan.annotation.treelist.cols.SupGroup;
 import com.thinkgem.jeesite.common.supcan.annotation.common.fonts.SupFont;
 import com.thinkgem.jeesite.common.supcan.annotation.common.properties.SupProperties;
 import com.thinkgem.jeesite.common.supcan.annotation.treelist.cols.SupGroup;

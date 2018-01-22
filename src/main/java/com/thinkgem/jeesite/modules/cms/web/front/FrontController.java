@@ -9,6 +9,12 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.thinkgem.jeesite.common.config.Global;
+import com.thinkgem.jeesite.common.utils.StringUtils;
+import com.thinkgem.jeesite.common.web.BaseController;
+import com.thinkgem.jeesite.modules.cms.entity.*;
+import com.thinkgem.jeesite.modules.cms.service.*;
+import com.thinkgem.jeesite.modules.cms.utils.CmsUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -44,7 +50,7 @@ import com.thinkgem.jeesite.modules.cms.utils.CmsUtils;
  */
 @Controller
 @RequestMapping(value = "${frontPath}")
-public class FrontController extends BaseController{
+public class FrontController extends BaseController {
 	
 	@Autowired
 	private ArticleService articleService;
@@ -76,7 +82,7 @@ public class FrontController extends BaseController{
 	@RequestMapping(value = "index-{siteId}${urlSuffix}")
 	public String index(@PathVariable String siteId, Model model) {
 		if (siteId.equals("1")){
-			return "redirect:"+Global.getFrontPath();
+			return "redirect:"+ Global.getFrontPath();
 		}
 		Site site = CmsUtils.getSite(siteId);
 		// 子站有独立页面，则显示独立页面

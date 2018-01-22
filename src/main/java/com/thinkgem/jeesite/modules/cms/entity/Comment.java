@@ -7,6 +7,7 @@ import java.util.Date;
 
 import javax.validation.constraints.NotNull;
 
+import com.thinkgem.jeesite.modules.sys.entity.User;
 import org.hibernate.validator.constraints.Length;
 
 import com.thinkgem.jeesite.common.persistence.DataEntity;

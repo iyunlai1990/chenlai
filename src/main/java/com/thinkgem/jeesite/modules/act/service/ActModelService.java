@@ -52,7 +52,7 @@ public class ActModelService extends BaseService {
 	/**
 	 * 流程模型列表
 	 */
-	public Page<org.activiti.engine.repository.Model> modelList(Page<org.activiti.engine.repository.Model> page, String category) {
+	public Page<Model> modelList(Page<Model> page, String category) {
 
 		ModelQuery modelQuery = repositoryService.createModelQuery().latestVersion().orderByLastUpdateTime().desc();
 		
@@ -109,7 +109,7 @@ public class ActModelService extends BaseService {
 	public String deploy(String id) {
 		String message = "";
 		try {
-			org.activiti.engine.repository.Model modelData = repositoryService.getModel(id);
+			Model modelData = repositoryService.getModel(id);
 			BpmnJsonConverter jsonConverter = new BpmnJsonConverter();
 			JsonNode editorNode = new ObjectMapper().readTree(repositoryService.getModelEditorSource(modelData.getId()));
 			BpmnModel bpmnModel = jsonConverter.convertToBpmnModel(editorNode);
@@ -148,7 +148,7 @@ public class ActModelService extends BaseService {
 	 */
 	public void export(String id, HttpServletResponse response) {
 		try {
-			org.activiti.engine.repository.Model modelData = repositoryService.getModel(id);
+			Model modelData = repositoryService.getModel(id);
 			BpmnJsonConverter jsonConverter = new BpmnJsonConverter();
 			JsonNode editorNode = new ObjectMapper().readTree(repositoryService.getModelEditorSource(modelData.getId()));
 			BpmnModel bpmnModel = jsonConverter.convertToBpmnModel(editorNode);
@@ -171,7 +171,7 @@ public class ActModelService extends BaseService {
 	 */
 	@Transactional(readOnly = false)
 	public void updateCategory(String id, String category) {
-		org.activiti.engine.repository.Model modelData = repositoryService.getModel(id);
+		Model modelData = repositoryService.getModel(id);
 		modelData.setCategory(category);
 		repositoryService.saveModel(modelData);
 	}

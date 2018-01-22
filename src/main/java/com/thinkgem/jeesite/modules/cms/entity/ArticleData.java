@@ -3,6 +3,7 @@
  */
 package com.thinkgem.jeesite.modules.cms.entity;
 
+import com.thinkgem.jeesite.common.config.Global;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotBlank;
 

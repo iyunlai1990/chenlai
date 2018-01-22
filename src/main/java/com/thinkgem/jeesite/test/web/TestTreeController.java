@@ -9,6 +9,11 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.thinkgem.jeesite.common.config.Global;
+import com.thinkgem.jeesite.common.utils.StringUtils;
+import com.thinkgem.jeesite.common.web.BaseController;
+import com.thinkgem.jeesite.test.entity.TestTree;
+import com.thinkgem.jeesite.test.service.TestTreeService;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -92,7 +97,7 @@ public class TestTreeController extends BaseController {
 		}
 		testTreeService.save(testTree);
 		addMessage(redirectAttributes, "保存树结构成功");
-		return "redirect:"+Global.getAdminPath()+"/test/testTree/?repage";
+		return "redirect:"+ Global.getAdminPath()+"/test/testTree/?repage";
 	}
 	
 	@RequiresPermissions("test:testTree:edit")

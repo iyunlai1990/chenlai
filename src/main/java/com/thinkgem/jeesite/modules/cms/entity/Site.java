@@ -3,6 +3,7 @@
  */
 package com.thinkgem.jeesite.modules.cms.entity;
 
+import com.thinkgem.jeesite.modules.sys.utils.UserUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.hibernate.validator.constraints.Length;
 
@@ -123,7 +124,7 @@ public class Site extends DataEntity<Site> {
 	 * 获取当前编辑的站点编号
 	 */
 	public static String getCurrentSiteId(){
-		String siteId = (String)UserUtils.getCache("siteId");
+		String siteId = (String) UserUtils.getCache("siteId");
 		return StringUtils.isNotBlank(siteId)?siteId:defaultSiteId();
 	}
 

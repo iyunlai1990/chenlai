@@ -6,6 +6,8 @@ package com.thinkgem.jeesite.modules.cms.entity;
 import java.util.Date;
 import java.util.List;
 
+import com.thinkgem.jeesite.common.config.Global;
+import com.thinkgem.jeesite.modules.sys.entity.Office;
 import org.hibernate.validator.constraints.Length;
 
 import com.google.common.collect.Lists;

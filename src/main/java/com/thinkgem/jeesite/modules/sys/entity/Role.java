@@ -5,6 +5,7 @@ package com.thinkgem.jeesite.modules.sys.entity;
 
 import java.util.List;
 
+import com.thinkgem.jeesite.common.config.Global;
 import org.apache.commons.lang3.StringUtils;
 import org.hibernate.validator.constraints.Length;
 
@@ -49,7 +50,7 @@ public class Role extends DataEntity<Role> {
 	public Role() {
 		super();
 		this.dataScope = DATA_SCOPE_SELF;
-		this.useable=Global.YES;
+		this.useable= Global.YES;
 	}
 	
 	public Role(String id){

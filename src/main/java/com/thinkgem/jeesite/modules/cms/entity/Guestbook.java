@@ -7,6 +7,8 @@ import java.util.Date;
 
 import javax.validation.constraints.NotNull;
 
+import com.thinkgem.jeesite.common.utils.IdGen;
+import com.thinkgem.jeesite.modules.sys.entity.User;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.Length;
 

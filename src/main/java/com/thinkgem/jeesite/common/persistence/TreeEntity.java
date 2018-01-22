@@ -5,6 +5,8 @@ package com.thinkgem.jeesite.common.persistence;
 
 import javax.validation.constraints.NotNull;
 
+import com.thinkgem.jeesite.common.utils.Reflections;
+import com.thinkgem.jeesite.common.utils.StringUtils;
 import org.hibernate.validator.constraints.Length;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
@@ -77,7 +79,7 @@ public abstract class TreeEntity<T> extends DataEntity<T> {
 	public String getParentId() {
 		String id = null;
 		if (parent != null){
-			id = (String)Reflections.getFieldValue(parent, "id");
+			id = (String) Reflections.getFieldValue(parent, "id");
 		}
 		return StringUtils.isNotBlank(id) ? id : "0";
 	}

@@ -3,6 +3,9 @@
  */
 package com.thinkgem.jeesite.common.persistence.interceptor;
 
+import com.thinkgem.jeesite.common.config.Global;
+import com.thinkgem.jeesite.common.utils.Reflections;
+import com.thinkgem.jeesite.common.utils.StringUtils;
 import org.apache.ibatis.executor.ErrorContext;
 import org.apache.ibatis.executor.ExecutorException;
 import org.apache.ibatis.logging.Log;
@@ -45,7 +48,7 @@ public class SQLHelper {
      * @param mappedStatement MappedStatement
      * @param boundSql        SQL
      * @param parameterObject 参数对象
-     * @throws java.sql.SQLException 数据库异常
+     * @throws SQLException 数据库异常
      */
     @SuppressWarnings("unchecked")
     public static void setParameters(PreparedStatement ps, MappedStatement mappedStatement, BoundSql boundSql, Object parameterObject) throws SQLException {

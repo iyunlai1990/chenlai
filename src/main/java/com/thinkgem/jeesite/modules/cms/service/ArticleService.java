@@ -7,6 +7,10 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import com.thinkgem.jeesite.common.config.Global;
+import com.thinkgem.jeesite.common.utils.CacheUtils;
+import com.thinkgem.jeesite.common.utils.StringUtils;
+import com.thinkgem.jeesite.modules.sys.utils.UserUtils;
 import org.apache.commons.lang3.StringEscapeUtils;
 import org.apache.commons.lang3.time.DateUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,7 +50,7 @@ public class ArticleService extends CrudService<ArticleDao, Article> {
 	@Transactional(readOnly = false)
 	public Page<Article> findPage(Page<Article> page, Article article, boolean isDataScopeFilter) {
 		// 更新过期的权重，间隔为“6”个小时
-		Date updateExpiredWeightDate =  (Date)CacheUtils.get("updateExpiredWeightDateByArticle");
+		Date updateExpiredWeightDate =  (Date) CacheUtils.get("updateExpiredWeightDateByArticle");
 		if (updateExpiredWeightDate == null || (updateExpiredWeightDate != null 
 				&& updateExpiredWeightDate.getTime() < new Date().getTime())){
 			dao.updateExpiredWeight(article);

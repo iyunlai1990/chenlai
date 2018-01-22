@@ -3,6 +3,7 @@
  */
 package com.thinkgem.jeesite.modules.test.service;
 
+import com.thinkgem.jeesite.modules.test.dao.TestDao;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

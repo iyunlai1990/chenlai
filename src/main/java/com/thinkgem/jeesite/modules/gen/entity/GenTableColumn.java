@@ -5,6 +5,7 @@ package com.thinkgem.jeesite.modules.gen.entity;
 
 import java.util.List;
 
+import com.thinkgem.jeesite.common.utils.StringUtils;
 import org.hibernate.validator.constraints.Length;
 
 import com.google.common.collect.Lists;

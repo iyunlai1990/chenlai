@@ -5,6 +5,8 @@ package com.thinkgem.jeesite.modules.act.utils;
 
 import java.util.List;
 
+import com.thinkgem.jeesite.common.utils.CacheUtils;
+import com.thinkgem.jeesite.common.utils.SpringContextHolder;
 import org.activiti.engine.RepositoryService;
 import org.activiti.engine.impl.persistence.entity.ProcessDefinitionEntity;
 import org.activiti.engine.impl.pvm.process.ActivityImpl;
@@ -30,7 +32,7 @@ public class ProcessDefCache {
 	 * @return
 	 */
 	public static ProcessDefinition get(String procDefId) {
-		ProcessDefinition pd = (ProcessDefinition)CacheUtils.get(ACT_CACHE, ACT_CACHE_PD_ID_ + procDefId);
+		ProcessDefinition pd = (ProcessDefinition) CacheUtils.get(ACT_CACHE, ACT_CACHE_PD_ID_ + procDefId);
 		if (pd == null) {
 			RepositoryService repositoryService = SpringContextHolder.getBean(RepositoryService.class);
 //			pd = (ProcessDefinitionEntity) ((RepositoryServiceImpl) repositoryService).getDeployedProcessDefinition(pd);

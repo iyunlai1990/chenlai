@@ -2,6 +2,7 @@ package com.thinkgem.jeesite.modules.sys.listener;
 
 import javax.servlet.ServletContext;
 
+import com.thinkgem.jeesite.modules.sys.service.SystemService;
 import org.springframework.web.context.WebApplicationContext;
 
 import com.thinkgem.jeesite.modules.sys.service.SystemService;

@@ -10,7 +10,7 @@ import org.activiti.engine.impl.persistence.entity.TaskEntity;
 import org.activiti.engine.impl.pvm.process.ActivityImpl;
 import org.activiti.engine.impl.pvm.runtime.AtomicOperation;
 
-public class CreateAndTakeTransitionCmd implements Command<java.lang.Void> {
+public class CreateAndTakeTransitionCmd implements Command<Void> {
 	
 	private TaskEntity currentTaskEntity;
 	private ActivityImpl activity;

@@ -10,6 +10,15 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import com.thinkgem.jeesite.common.utils.StringUtils;
+import com.thinkgem.jeesite.modules.act.service.cmd.CreateAndTakeTransitionCmd;
+import com.thinkgem.jeesite.modules.act.service.cmd.JumpTaskCmd;
+import com.thinkgem.jeesite.modules.act.service.creator.ChainedActivitiesCreator;
+import com.thinkgem.jeesite.modules.act.service.creator.MultiInstanceActivityCreator;
+import com.thinkgem.jeesite.modules.act.service.creator.RuntimeActivityDefinitionEntityIntepreter;
+import com.thinkgem.jeesite.modules.act.service.creator.SimpleRuntimeActivityDefinitionEntity;
+import com.thinkgem.jeesite.modules.sys.entity.User;
+import com.thinkgem.jeesite.modules.sys.utils.UserUtils;
 import org.activiti.bpmn.model.BpmnModel;
 import org.activiti.engine.FormService;
 import org.activiti.engine.HistoryService;

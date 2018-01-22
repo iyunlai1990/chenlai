@@ -5,6 +5,13 @@ package com.thinkgem.jeesite.modules.sys.utils;
 
 import java.util.List;
 
+import com.thinkgem.jeesite.common.utils.CacheUtils;
+import com.thinkgem.jeesite.common.utils.SpringContextHolder;
+import com.thinkgem.jeesite.modules.sys.entity.Area;
+import com.thinkgem.jeesite.modules.sys.entity.Menu;
+import com.thinkgem.jeesite.modules.sys.entity.Office;
+import com.thinkgem.jeesite.modules.sys.entity.Role;
+import com.thinkgem.jeesite.modules.sys.security.SystemAuthorizingRealm;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.UnavailableSecurityManagerException;
 import org.apache.shiro.session.InvalidSessionException;
@@ -57,7 +64,7 @@ public class UserUtils {
 	 * @return 取不到返回null
 	 */
 	public static User get(String id){
-		User user = (User)CacheUtils.get(USER_CACHE, USER_CACHE_ID_ + id);
+		User user = (User) CacheUtils.get(USER_CACHE, USER_CACHE_ID_ + id);
 		if (user ==  null){
 			user = userDao.get(id);
 			if (user == null){
@@ -120,7 +127,7 @@ public class UserUtils {
 	 * @return 取不到返回 new User()
 	 */
 	public static User getUser(){
-		Principal principal = getPrincipal();
+		SystemAuthorizingRealm.Principal principal = getPrincipal();
 		if (principal!=null){
 			User user = get(principal.getId());
 			if (user != null){
@@ -232,10 +239,10 @@ public class UserUtils {
 	/**
 	 * 获取当前登录者对象
 	 */
-	public static Principal getPrincipal(){
+	public static SystemAuthorizingRealm.Principal getPrincipal(){
 		try{
 			Subject subject = SecurityUtils.getSubject();
-			Principal principal = (Principal)subject.getPrincipal();
+			SystemAuthorizingRealm.Principal principal = (SystemAuthorizingRealm.Principal)subject.getPrincipal();
 			if (principal != null){
 				return principal;
 			}

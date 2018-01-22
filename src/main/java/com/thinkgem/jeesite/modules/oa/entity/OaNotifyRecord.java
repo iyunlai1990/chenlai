@@ -3,6 +3,7 @@
  */
 package com.thinkgem.jeesite.modules.oa.entity;
 
+import com.thinkgem.jeesite.modules.sys.entity.User;
 import org.hibernate.validator.constraints.Length;
 import com.thinkgem.jeesite.modules.sys.entity.User;
 import java.util.Date;

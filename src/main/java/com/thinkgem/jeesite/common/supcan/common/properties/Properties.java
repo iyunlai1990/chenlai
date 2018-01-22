@@ -9,6 +9,9 @@ import com.google.common.collect.Lists;
 import com.thinkgem.jeesite.common.supcan.annotation.common.properties.SupExpress;
 import com.thinkgem.jeesite.common.supcan.annotation.common.properties.SupProperties;
 import com.thinkgem.jeesite.common.utils.ObjectUtils;
+import com.thinkgem.jeesite.common.supcan.annotation.common.properties.SupExpress;
+import com.thinkgem.jeesite.common.supcan.annotation.common.properties.SupProperties;
+import com.thinkgem.jeesite.common.utils.ObjectUtils;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
 

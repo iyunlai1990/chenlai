@@ -3,6 +3,8 @@
  */
 package com.thinkgem.jeesite.common.persistence.interceptor;
 
+import com.thinkgem.jeesite.common.config.Global;
+import com.thinkgem.jeesite.common.utils.Reflections;
 import org.apache.ibatis.logging.Log;
 import org.apache.ibatis.logging.LogFactory;
 import org.apache.ibatis.plugin.Interceptor;
@@ -61,7 +63,7 @@ public abstract class BaseInterceptor implements Interceptor, Serializable {
             if (parameterObject instanceof Page) {
                 return (Page<Object>) parameterObject;
             } else {
-                return (Page<Object>)Reflections.getFieldValue(parameterObject, PAGE);
+                return (Page<Object>) Reflections.getFieldValue(parameterObject, PAGE);
             }
     	}catch (Exception e) {
 			return null;

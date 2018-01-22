@@ -5,6 +5,7 @@ package com.thinkgem.jeesite.modules.sys.web;
 
 import javax.servlet.http.HttpServletRequest;
 
+import com.thinkgem.jeesite.common.web.BaseController;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

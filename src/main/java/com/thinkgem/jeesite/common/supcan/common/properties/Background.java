@@ -5,6 +5,8 @@ package com.thinkgem.jeesite.common.supcan.common.properties;
 
 import com.thinkgem.jeesite.common.supcan.annotation.common.properties.SupBackground;
 import com.thinkgem.jeesite.common.utils.ObjectUtils;
+import com.thinkgem.jeesite.common.supcan.annotation.common.properties.SupBackground;
+import com.thinkgem.jeesite.common.utils.ObjectUtils;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
 

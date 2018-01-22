@@ -9,6 +9,12 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
+import com.thinkgem.jeesite.common.config.Global;
+import com.thinkgem.jeesite.common.utils.CacheUtils;
+import com.thinkgem.jeesite.common.utils.Exceptions;
+import com.thinkgem.jeesite.common.utils.SpringContextHolder;
+import com.thinkgem.jeesite.common.utils.StringUtils;
+import com.thinkgem.jeesite.modules.sys.entity.Menu;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.web.method.HandlerMethod;
 
@@ -109,7 +115,7 @@ public class LogUtils {
 	public static String getMenuNamePath(String requestUri, String permission){
 		String href = StringUtils.substringAfter(requestUri, Global.getAdminPath());
 		@SuppressWarnings("unchecked")
-		Map<String, String> menuMap = (Map<String, String>)CacheUtils.get(CACHE_MENU_NAME_PATH_MAP);
+		Map<String, String> menuMap = (Map<String, String>) CacheUtils.get(CACHE_MENU_NAME_PATH_MAP);
 		if (menuMap == null){
 			menuMap = Maps.newHashMap();
 			List<Menu> menuList = menuDao.findAllList(new Menu());

@@ -5,6 +5,8 @@ package com.thinkgem.jeesite.common.supcan.treelist.cols;
 
 import com.thinkgem.jeesite.common.supcan.annotation.treelist.cols.SupCol;
 import com.thinkgem.jeesite.common.utils.ObjectUtils;
+import com.thinkgem.jeesite.common.supcan.annotation.treelist.cols.SupCol;
+import com.thinkgem.jeesite.common.utils.ObjectUtils;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
 import com.thoughtworks.xstream.annotations.XStreamConverter;

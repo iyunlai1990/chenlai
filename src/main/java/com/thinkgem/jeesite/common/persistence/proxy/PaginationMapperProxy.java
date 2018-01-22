@@ -3,6 +3,7 @@
  */
 package com.thinkgem.jeesite.common.persistence.proxy;
 
+import com.thinkgem.jeesite.common.utils.Reflections;
 import org.apache.ibatis.binding.BindingException;
 import org.apache.ibatis.binding.MapperMethod;
 import org.apache.ibatis.session.SqlSession;

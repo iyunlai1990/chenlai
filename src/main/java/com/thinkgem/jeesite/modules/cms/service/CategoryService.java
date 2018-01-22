@@ -6,6 +6,10 @@ package com.thinkgem.jeesite.modules.cms.service;
 import java.util.List;
 import java.util.Set;
 
+import com.thinkgem.jeesite.common.config.Global;
+import com.thinkgem.jeesite.modules.sys.entity.Office;
+import com.thinkgem.jeesite.modules.sys.entity.User;
+import com.thinkgem.jeesite.modules.sys.utils.UserUtils;
 import org.apache.commons.lang3.StringEscapeUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
@@ -40,7 +44,7 @@ public class CategoryService extends TreeService<CategoryDao, Category> {
 	@SuppressWarnings("unchecked")
 	public List<Category> findByUser(boolean isCurrentSite, String module){
 		
-		List<Category> list = (List<Category>)UserUtils.getCache(CACHE_CATEGORY_LIST);
+		List<Category> list = (List<Category>) UserUtils.getCache(CACHE_CATEGORY_LIST);
 		if (list == null){
 			User user = UserUtils.getUser();
 			Category category = new Category();

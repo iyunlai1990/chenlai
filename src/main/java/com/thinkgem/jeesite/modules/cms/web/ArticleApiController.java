@@ -4,6 +4,11 @@
 package com.thinkgem.jeesite.modules.cms.web;
 
 import com.google.common.collect.Lists;
+import com.thinkgem.jeesite.common.web.BaseController;
+import com.thinkgem.jeesite.modules.cms.entity.Article;
+import com.thinkgem.jeesite.modules.cms.entity.Category;
+import com.thinkgem.jeesite.modules.cms.entity.Comment;
+import com.thinkgem.jeesite.modules.cms.service.*;
 import com.thinkgem.jeesite.common.persistence.Page;
 import com.thinkgem.jeesite.common.utils.StringUtils;
 import com.thinkgem.jeesite.common.web.BaseController;
@@ -29,7 +34,7 @@ import java.util.Map;
  */
 @Controller
 @RequestMapping(value = "${taleFront}/articleApi")
-public class ArticleApiController extends BaseController{
+public class ArticleApiController extends BaseController {
 	
 	@Autowired
 	private ArticleService articleService;

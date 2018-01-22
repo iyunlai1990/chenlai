@@ -6,6 +6,7 @@ package com.thinkgem.jeesite.modules.sys.entity;
 import java.util.Date;
 import java.util.Map;
 
+import com.thinkgem.jeesite.common.utils.StringUtils;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 
 import com.thinkgem.jeesite.common.persistence.DataEntity;

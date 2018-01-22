@@ -783,7 +783,7 @@ public class FileUtils extends org.apache.commons.io.FileUtils {
 		byte b[] = new byte[1024]; 	// 暂存容器
 
 		if (request.getHeader("Range") != null) { // 客户端请求的下载的文件块的开始字节
-			response.setStatus(javax.servlet.http.HttpServletResponse.SC_PARTIAL_CONTENT);
+			response.setStatus(HttpServletResponse.SC_PARTIAL_CONTENT);
 			logger.debug("request.getHeader(\"Range\") = " + request.getHeader("Range"));
 			rangeBytes = request.getHeader("Range").replaceAll("bytes=", "");
 			if (rangeBytes.indexOf('-') == rangeBytes.length() - 1) {// bytes=969998336-

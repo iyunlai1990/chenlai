@@ -3,6 +3,7 @@
  */
 package com.thinkgem.jeesite.modules.gen.service;
 
+import com.thinkgem.jeesite.common.utils.StringUtils;
 import org.apache.commons.lang3.StringEscapeUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

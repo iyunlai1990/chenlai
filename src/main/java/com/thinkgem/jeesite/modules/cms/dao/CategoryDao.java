@@ -6,6 +6,7 @@ package com.thinkgem.jeesite.modules.cms.dao;
 import java.util.List;
 import java.util.Map;
 
+import com.thinkgem.jeesite.modules.cms.entity.Category;
 import com.thinkgem.jeesite.common.persistence.TreeDao;
 import com.thinkgem.jeesite.common.persistence.annotation.MyBatisDao;
 import com.thinkgem.jeesite.modules.cms.entity.Category;

@@ -8,6 +8,7 @@ import java.util.List;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
+import com.thinkgem.jeesite.common.utils.StringUtils;
 import org.hibernate.validator.constraints.Length;
 
 import com.google.common.collect.Lists;

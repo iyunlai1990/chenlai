@@ -3,6 +3,7 @@
  */
 package com.thinkgem.jeesite.modules.act.dao;
 
+import com.thinkgem.jeesite.modules.act.entity.Act;
 import com.thinkgem.jeesite.common.persistence.CrudDao;
 import com.thinkgem.jeesite.common.persistence.annotation.MyBatisDao;
 import com.thinkgem.jeesite.modules.act.entity.Act;

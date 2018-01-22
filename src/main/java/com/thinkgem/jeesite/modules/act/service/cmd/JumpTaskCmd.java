@@ -10,7 +10,7 @@ import org.activiti.engine.impl.persistence.entity.TaskEntity;
 import org.activiti.engine.impl.pvm.process.ActivityImpl;
 import org.activiti.engine.impl.pvm.runtime.AtomicOperation;
 
-public class JumpTaskCmd implements Command<java.lang.Void> {
+public class JumpTaskCmd implements Command<Void> {
 	
 	private TaskEntity taskEntity;
 	private ActivityImpl targetActivity;

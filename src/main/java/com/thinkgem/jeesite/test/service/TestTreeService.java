@@ -5,6 +5,7 @@ package com.thinkgem.jeesite.test.service;
 
 import java.util.List;
 
+import com.thinkgem.jeesite.common.utils.StringUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

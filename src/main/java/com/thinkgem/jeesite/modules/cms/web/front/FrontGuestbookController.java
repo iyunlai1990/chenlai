@@ -8,6 +8,11 @@ import java.util.Date;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.thinkgem.jeesite.common.config.Global;
+import com.thinkgem.jeesite.common.web.BaseController;
+import com.thinkgem.jeesite.modules.cms.entity.Guestbook;
+import com.thinkgem.jeesite.modules.cms.entity.Site;
+import com.thinkgem.jeesite.modules.cms.service.GuestbookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -31,7 +36,7 @@ import com.thinkgem.jeesite.modules.cms.utils.CmsUtils;
  */
 @Controller
 @RequestMapping(value = "${frontPath}/guestbook")
-public class FrontGuestbookController extends BaseController{
+public class FrontGuestbookController extends BaseController {
 	
 	@Autowired
 	private GuestbookService guestbookService;
@@ -71,7 +76,7 @@ public class FrontGuestbookController extends BaseController{
 //		}else{
 //			addMessage(redirectAttributes, "验证码不能为空。");
 //		}
-		return "redirect:"+Global.getFrontPath()+"/guestbook";
+		return "redirect:"+ Global.getFrontPath()+"/guestbook";
 	}
 	
 }

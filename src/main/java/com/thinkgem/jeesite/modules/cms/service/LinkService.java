@@ -6,6 +6,8 @@ package com.thinkgem.jeesite.modules.cms.service;
 import java.util.Date;
 import java.util.List;
 
+import com.thinkgem.jeesite.common.utils.CacheUtils;
+import com.thinkgem.jeesite.common.utils.StringUtils;
 import org.apache.commons.lang3.time.DateUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -30,7 +32,7 @@ public class LinkService extends CrudService<LinkDao, Link> {
 	@Transactional(readOnly = false)
 	public Page<Link> findPage(Page<Link> page, Link link, boolean isDataScopeFilter) {
 		// 更新过期的权重，间隔为“6”个小时
-		Date updateExpiredWeightDate =  (Date)CacheUtils.get("updateExpiredWeightDateByLink");
+		Date updateExpiredWeightDate =  (Date) CacheUtils.get("updateExpiredWeightDateByLink");
 		if (updateExpiredWeightDate == null || (updateExpiredWeightDate != null 
 				&& updateExpiredWeightDate.getTime() < new Date().getTime())){
 			dao.updateExpiredWeight(link);
