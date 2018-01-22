@@ -13,6 +13,13 @@
 <html>
 <head>
     <%@include file="/WEB-INF/views/frontweb/include/head.jsp" %>
+    <style>
+        /* 所有class为menu的div中的ul中的li样式 */
+        .links-list li
+        {
+            float:left; /* 向左漂移，将竖排变为横排 */
+        }
+    </style>
 </head>
 <body class='bg-grey' gtools_scp_screen_capture_injected='true'>
 <!--[if lt IE 8]>
@@ -20,9 +27,14 @@
     当前网页 <strong>不支持</strong> 你正在使用的浏览器. 为了正常的访问, 请 <a href='http://browsehappy.com/' target='_blank'>升级你的浏览器</a>。
 </div>
 <![endif]-->
+
+
+<!--头部-->
 <header id='header' class='header bg-white'>
     <%@ include file='/WEB-INF/views/frontweb/layouts/header.jsp' %>
 </header>
+
+<!--文章主体-->
 <article class='main-content page-page' itemscope itemtype='http://schema.org/Article'>
     <div class='post-header'>
         <h1 class='post-title' itemprop='name headline'>
@@ -38,9 +50,25 @@
         <p class='post-tags'></p>
         <p></p>
         ${article.articleData.content}
+        
+        <!-- 以下显示常用栏目 -->
+        <c:forEach items="${fnc:getCategoryList(1,18 ,1000 ,null)}" var="category">
+            <h3 id="${category.name}${category.id}">${category.name}</h3>
+
+            <c:forEach items="${fnc:getLinkList(1,category.id ,1000 ,null)}" var="categorySub">
+                <p class="hvr-bob" style="margin-left: 30px"><a href="${categorySub.href}">${categorySub.title}</a></p>
+            </c:forEach>
+
+        </c:forEach>
+        
     </div>
 </article>
+
+
 <%@ include file='/WEB-INF/views/frontweb/layouts/post-bottom-bar.jsp' %>
+
+
+<!--文章评论-->
 <div id='15' class='comment-container'>
     <div id='comments' class='clearfix'>
         <span class='response'></span>
@@ -74,6 +102,8 @@
 
     </div>
 </div>
+
+
 <script type='text/javascript'>
     (function () {
         window.TaleComment = {
@@ -195,14 +225,16 @@
     }
 </script>
 
+<!--右边的内容引导栏-->
 <div id="directory-content" class="directory-content">
     <div id="directory"><ul>
-        <c:forEach items="${fnc:getArticleDataGuideList(article.id)}" var="articleDataGuide">
-            <li id ="${articleDataGuide.articledivhref}" ><a href="#${articleDataGuide.articledivhref}">${articleDataGuide.articledivtitle}</a></li>
+        <c:forEach items="${fnc:getCategoryList(1,18 ,1000 ,null)}" var="category">
+            <li id ="${category.id}" ><a href="#${category.name}${category.id}">${category.name}</a></li>
         </c:forEach>
     </ul></div>
 </div>
 
+<!--底部-->
 <footer id='footer' class='footer bg-white'>
     <%@ include file='/WEB-INF/views/frontweb/layouts/footer.jsp' %>
 </footer>

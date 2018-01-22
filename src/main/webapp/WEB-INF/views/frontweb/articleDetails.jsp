@@ -40,23 +40,9 @@
         ${article.articleData.content}
     </div>
 </article>
-<div id='post-bottom-bar' class='post-bottom-bar'>
-    <div class='bottom-bar-inner'>
-        <div class='bottom-bar-items social-share left'>
-            <span class='bottom-bar-item'>Share : </span>
-            <span class='bottom-bar-item bottom-bar-facebook'><a href='#' target='_blank' title='最近听的歌' rel='nofollow'>facebook</a></span>
-            <span class='bottom-bar-item bottom-bar-twitter'><a href='#' target='_blank' title='最近听的歌' rel='nofollow'>Twitter</a></span>
-            <span class='bottom-bar-item bottom-bar-weibo'><a href='#' target='_blank' title='最近听的歌' rel='nofollow'>Weibo</a></span>
-            <span class='bottom-bar-item bottom-bar-qrcode'><a href='#' target='_blank' rel='nofollow'>QRcode</a></span>
-        </div>
-        <div class='bottom-bar-items right'>
-            <span class='bottom-bar-item'><a href='#' title='步步向上的一年'>→</a></span>
-            <span class='bottom-bar-item'></span>
-            <span class='bottom-bar-item'><a href='#footer'>↓</a></span>
-            <span class='bottom-bar-item'><a href='#'>↑</a></span>
-        </div>
-    </div>
-</div>
+
+<%@ include file='/WEB-INF/views/frontweb/layouts/post-bottom-bar.jsp' %>
+
 <div id='15' class='comment-container'>
     <div id='comments' class='clearfix'>
         <span class='response'></span>

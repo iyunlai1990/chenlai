@@ -12,6 +12,7 @@ import com.thinkgem.jeesite.common.web.BaseController;
 import com.thinkgem.jeesite.modules.cms.entity.*;
 import com.thinkgem.jeesite.modules.cms.service.*;
 import com.thinkgem.jeesite.modules.cms.utils.CmsUtils;
+import com.thinkgem.jeesite.modules.sys.utils.DictUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -409,7 +410,7 @@ public class FrontWebController extends BaseController{
                 categoryList = categoryService.findByParentId(category.getParent().getId(), category.getSite().getId());
             }
             // 获取文章内容
-            Article article = articleService.get("98a778fb661c44279347c5002493e53f");
+			Article article = articleService.get(DictUtils.getDictValue("关于我","specialLink",""));
             if (article == null || !Article.DEL_FLAG_NORMAL.equals(article.getDelFlag())) {
                 return "error/404";
             }
@@ -465,7 +466,7 @@ public class FrontWebController extends BaseController{
                 categoryList = categoryService.findByParentId(category.getParent().getId(), category.getSite().getId());
             }
             // 获取文章内容
-            Article article = articleService.get("5a3f252ff72e44baa26f4b6936a357cb");
+            Article article = articleService.get(DictUtils.getDictValue("友情连接","specialLink",""));
             if (article == null || !Article.DEL_FLAG_NORMAL.equals(article.getDelFlag())) {
                 return "error/404";
             }
@@ -490,7 +491,7 @@ public class FrontWebController extends BaseController{
 
 //			return "modules/cms/front/themes/"+category.getSite().getTheme()+"/"+getTpl(article);
             //return "modules/cms/front/themes/"+site.getTheme()+"/"+getTpl(article);
-            return "frontweb/articleAbout";
+            return "frontweb/articleLink";
         }
         return "error/404";
     }

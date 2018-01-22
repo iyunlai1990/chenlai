@@ -70,12 +70,12 @@
 <script type="text/javascript">
     //页面一打开就执行，放入ready是为了layer所需配件（css、扩展模块）加载完毕
     layer.ready(function(){
-        $('.navbar-menu a').mouseover(function(){
+       /* $('.navbar-menu a').mouseover(function(){
             $(this).addClass("hvr-bob");
         });
         $('.navbar-logo').mouseover(function(){
             $(this).addClass("hvr-bob");
-        });
+        });*/
 
         //对导航栏当前状态进行判断
         var now_href = window.location.href ;

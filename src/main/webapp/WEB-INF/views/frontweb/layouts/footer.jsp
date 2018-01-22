@@ -3,17 +3,14 @@
 <div class="footer-social">
     <div class="footer-container clearfix">
         <div class="social-list">
-            <a class="social weibo" target="blank" href="#">微博</a>
+            <a class="social weibo" target="blank" href="https://weibo.com/u/5730472119?is_all=1">微博</a>
 
-            <a class="social zhihu" target="blank"
-               href="#">知乎</a>
+            <a class="social zhihu" target="blank" href="https://www.zhihu.com/people/zhang-yun-lai-30/activities">知乎</a>
 
-            <a class="social rss" target="blank" href="#">RSS</a>
+            <a class="social linkedin" target="blank" href="https://www.linkedin.com/in/%E8%BF%90%E6%9D%A5-%E5%BC%A0-8a0981157/">linkedin</a>
 
-            <a class="social github" target="blank"
-               href="#">Github</a>
+            <a class="social github" target="blank" href="https://github.com/iyunlai1990">Github</a>
 
-            <a class="social twitter" target="blank" href="#">Twitter</a>
             <a target="blank" href="https://dev-cheats.com">开发者秘籍</a>
         </div>
     </div>

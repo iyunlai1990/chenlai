@@ -95,6 +95,7 @@
 		<include refid="cmsArticleJoins"/>
 		<where>
 			a.del_flag = #{delFlag}
+
 			<if test="title != null and title != ''">
 				AND a.title LIKE
 				<if test="dbName == 'oracle'">'%'||#{title}||'%'</if>
@@ -108,7 +109,7 @@
 				<if test="dbName == 'mysql'">CONCAT('%', #{posid}, '%')</if>
 			</if>
 			<if test="category.id != null and category.id != ''">
-				AND (a.category_id = #{category.id}
+				AND (a.category_id = #{category.id} and a.category_id!= "67bafbc23b14479b91c93be1a2446d10"
 				<if test="category.parentIds != null and category.parentIds != ''">
 					or c.parent_ids like
 					<if test="dbName == 'oracle'">'%'||#{category.id}||'%'</if>
@@ -122,6 +123,7 @@
 			<if test="createBy != null and createBy.id != null and createBy.id != ''">
 				AND a.create_by  = #{createBy.id}
 			</if>
+
 			<!-- ${sqlMap.dsf}-->
 		</where>
 
