@@ -126,4 +126,29 @@ public class ArticleApiController extends BaseController {
 		return map;
 	}
 
+
+	/**
+	 * 用户文章列表
+	 */
+	@RequestMapping(value = "getCategoryByDate")
+	@ResponseBody
+	public List<HashMap> getCategoryByDate(int style) {
+		switch (style){
+			case 1 :
+				return articleService.getCategoryByDate("%Y");
+			case 2 :
+				return articleService.getCategoryByDate("%m");
+			case 3 :
+				return articleService.getCategoryByDate("%d");
+			case 4 :
+				return articleService.getCategoryByDate("%w");
+			case 5 :
+				return articleService.getCategoryByDate("%Y%m%d");
+			default:
+				return articleService.getCategoryByDate("%Y%m");
+		}
+
+	}
+
+
 }
