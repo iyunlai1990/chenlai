@@ -5,6 +5,7 @@ package com.thinkgem.jeesite.modules.cms.service;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 
 import com.thinkgem.jeesite.common.config.Global;
@@ -203,5 +204,10 @@ public class ArticleService extends CrudService<ArticleDao, Article> {
 
 	public List<Article> findListGroupByCategory(Article article){
 		return  articleDao.findListGroupByCategory(article);
+	}
+
+
+	public List<HashMap> getCategoryByDate(String paramStr){
+		return articleDao.getCategoryByDate(paramStr);
 	}
 }

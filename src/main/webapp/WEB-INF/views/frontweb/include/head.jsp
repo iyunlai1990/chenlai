@@ -40,3 +40,4 @@
         font-family: myFirstFont;
     }
 </style>
+<script type="text/javascript" src="${ctxStatic}/ichart/ichart.1.2.1.min.js"></script>

@@ -537,4 +537,61 @@ public class FrontWebController extends BaseController {
 		return "error/404";
 	}
 
+
+
+	/**
+	 * 跳转到日期分类
+	 * @param request
+	 * @param response
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping(value = {"articleCategoryByDate"})
+	public String articleCategoryByDate(String style ,HttpServletRequest request, HttpServletResponse response, Model model) {
+		model.addAttribute("style", style);
+		switch (Integer.valueOf(style)){
+			case 1 :
+				model.addAttribute("title", "年度文章总数");
+				return "frontweb/articleCategoryByDate";
+			case 2 :
+				model.addAttribute("title", "月度文章总数");
+				return "frontweb/articleCategoryByDate";
+			case 3 :
+				model.addAttribute("title", "天度文章总数");
+				return "frontweb/articleCategoryByDate";
+			case 4 :
+				model.addAttribute("title", "周文章总数");
+				return "frontweb/articleCategoryByDate";
+			default:
+				model.addAttribute("title", "年度文章总数");
+				return "frontweb/articleCategoryByDate";
+		}
+	}
+
+	/**
+	 * 跳转到更多
+	 * @return
+	 */
+	@RequestMapping(value = {"more"})
+	public String more(HttpServletRequest request, HttpServletResponse response, Model model) {
+		return "frontweb/more";
+	}
+
+
+	/**
+	 * 根据时间列表查询文章总数
+	 */
+	@RequestMapping(value = {"articleListByDate"})
+	public String articleListByDate(String createDate ,HttpServletRequest request, HttpServletResponse response, Model model) {
+		model.addAttribute("createDate", createDate);
+		Article article = new Article();
+		article.setCreateDate(new Date(createDate));
+		Page<Article> page = articleService.findPage(new Page<Article>(request, response), article, true);
+		model.addAttribute("page", page);
+		return "frontweb/articleDateList";
+	}
+
+
+
+
 }

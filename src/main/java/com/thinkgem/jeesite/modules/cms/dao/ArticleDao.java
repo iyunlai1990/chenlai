@@ -3,6 +3,7 @@
  */
 package com.thinkgem.jeesite.modules.cms.dao;
 
+import java.util.HashMap;
 import java.util.List;
 
 import com.thinkgem.jeesite.modules.cms.entity.Article;
@@ -37,4 +38,6 @@ public interface ArticleDao extends CrudDao<Article> {
 //		return update("update Article set weight=0 where weight > 0 and weightDate < current_timestamp()");
 //	}
 	public List<Article> findListGroupByCategory(Article article);
+
+	public List<HashMap> getCategoryByDate(String paramStr);
 }

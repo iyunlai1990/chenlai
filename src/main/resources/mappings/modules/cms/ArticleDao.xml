@@ -48,6 +48,12 @@
 		<include refid="cmsArticleJoins"/>
 		<where>
 			a.del_flag = #{delFlag}
+			<if test="create_date != null and create_date != ''">
+				AND a.create_date LIKE
+					<if test="dbName == 'oracle'">'%'||#{create_date}||'%'</if>
+					<if test="dbName == 'mssql'">'%'+#{create_date}+'%'</if>
+				`	<if test="dbName == 'mysql'">CONCAT('%', #{create_date}, '%')</if>
+			</if>
 			<if test="title != null and title != ''">
 				AND a.title LIKE 
 					<if test="dbName == 'oracle'">'%'||#{title}||'%'</if>
@@ -293,4 +299,10 @@
 			order by cp.sort, cp.id, c.sort, c.id
 		</where>		
 	</select>
+
+
+	<select id="getCategoryByDate" resultType="java.util.HashMap">
+		SELECT DATE_FORMAT(create_date,#{paramStr}) value,COUNT(id) COUNT FROM cms_article GROUP BY value;
+	</select>
+
 </mapper>

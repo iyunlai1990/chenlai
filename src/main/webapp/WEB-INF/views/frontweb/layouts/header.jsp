@@ -94,7 +94,7 @@
             title: '更多选择',
             maxmin: true,
             area: ['800px', '500px'],
-            content: 'http://layer.layui.com/test/welcome.html',
+            content: '/front/more',
             end: function(){
                 layer.tips('Hi', '#about', {tips: 1})
             }
