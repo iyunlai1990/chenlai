@@ -24,7 +24,7 @@
 
                 </a>
                 <div class="info-text">
-                    <p>一生中最爱~~Vivi.</p>
+                    <p>一生中最爱~~${fns:getDictValue("logoName", "sys_logo", null)}.</p>
                     <p>Powered by <a href="https://github.com/otale/tale" target="_blank" rel="nofollow">ChenLai</a>
                     </p>
                     <p>&copy; 2017 <a href="https://github.com/biezhi">chenlai</a></p>

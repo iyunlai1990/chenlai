@@ -1,8 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" %><meta charset="utf-8">
 <div class="navbar-container">
     <a href="/front" class="navbar-logo">
-        <img src="${ctxStatic}/tale/image/rose.png" alt="Vivi"/>
-        Vivi
+        <img src="${ctxStatic}/tale/image/rose.png" alt="${fns:getDictValue("1", "sys_logo", null)}"/>
+        ${fns:getDictValue("logoName", "sys_logo", null)}
     </a>
     <div class="navbar-menu">
         <a href="/front/jumpArticleCategoryList">归档</a>

@@ -48,11 +48,11 @@
 		<include refid="cmsArticleJoins"/>
 		<where>
 			a.del_flag = #{delFlag}
-			<if test="create_date != null and create_date != ''">
+			<if test="createDate != null and createDate != ''">
 				AND a.create_date LIKE
 					<if test="dbName == 'oracle'">'%'||#{create_date}||'%'</if>
 					<if test="dbName == 'mssql'">'%'+#{create_date}+'%'</if>
-				`	<if test="dbName == 'mysql'">CONCAT('%', #{create_date}, '%')</if>
+				    <if test="dbName == 'mysql'">CONCAT('%', #{create_date}, '%')</if>
 			</if>
 			<if test="title != null and title != ''">
 				AND a.title LIKE 
